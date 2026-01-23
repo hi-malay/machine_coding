@@ -45,10 +45,10 @@ const Multiprogress = () => {
       <button
         onClick={addProgress}
         style={{
-          backgroundColor: "var(--primary)",
+          backgroundColor: "var(--p-primary)",
           padding: "12px 24px",
           fontSize: "1rem",
-          boxShadow: "0 4px 6px -1px var(--primary)",
+          boxShadow: "0 4px 6px -1px var(--p-primary)",
         }}
       >
         + Add New Progress Bar

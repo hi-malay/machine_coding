@@ -78,8 +78,8 @@ const BubblingCapturing = () => {
                 padding: "6px 10px",
                 backgroundColor: i === 0 ? "rgba(79, 70, 229, 0.1)" : "#f8fafc",
                 borderRadius: "6px",
-                border: "1px solid var(--border)",
-                color: i === 0 ? "var(--primary)" : "var(--text-muted)",
+                border: "1px solid var(--p-border)",
+                color: i === 0 ? "var(--p-primary)" : "var(--text-muted)",
               }}
             >
               {log}

@@ -37,7 +37,7 @@ const NestedCheckBox = ({ data, checkbox, setCheckbox }) => {
             <div
               style={{
                 marginLeft: "32px",
-                borderLeft: "1px solid var(--border)",
+                borderLeft: "1px solid var(--p-border)",
               }}
             >
               <NestedCheckBox

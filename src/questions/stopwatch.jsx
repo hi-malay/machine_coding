@@ -35,7 +35,7 @@ const Stopwatch = () => {
       </div>
 
       <div className="stopwatch-btn-group">
-        <button onClick={start} style={{ backgroundColor: "var(--primary)" }}>
+        <button onClick={start} style={{ backgroundColor: "var(--p-primary)" }}>
           Start
         </button>
         <button onClick={stop} style={{ backgroundColor: "#334155" }}>

@@ -7,7 +7,7 @@
 .sidebar {
   width: var(--sidebar-width);
   background-color: var(--bg-sidebar);
-  border-right: 1px solid var(--border);
+  border-right: 1px solid var(--p-border);
   padding: 1.5rem;
   height: 100vh;
   position: sticky;
@@ -19,7 +19,7 @@
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  color: var(--primary);
+  color: var(--p-primary);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -41,11 +41,11 @@
 
 .nav-item:hover {
   background-color: #f1f5f9;
-  color: var(--primary);
+  color: var(--p-primary);
 }
 
 .nav-item.active {
-  background-color: var(--primary);
+  background-color: var(--p-primary);
   color: white;
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
 }
@@ -75,7 +75,7 @@
 
 .challenge-card {
   background-color: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 1px solid var(--p-border);
   border-radius: 20px;
   padding: 2.5rem;
   box-shadow: var(--card-shadow);
@@ -150,14 +150,14 @@
   background: #f8fafc;
   padding: 24px;
   border-radius: 16px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--p-border);
 }
 
 .grid-cell {
   width: 80px;
   height: 80px;
   background-color: white;
-  border: 1px solid var(--border);
+  border: 1px solid var(--p-border);
   border-radius: 12px;
   padding: 0;
   cursor: pointer;
@@ -168,18 +168,18 @@
   font-size: 1.5rem;
   font-weight: 700;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  color: var(--primary);
+  color: var(--p-primary);
 }
 
 .grid-cell:hover {
-  border-color: var(--primary);
+  border-color: var(--p-primary);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .grid-cell.active {
-  background-color: var(--primary);
-  border-color: var(--primary);
+  background-color: var(--p-primary);
+  border-color: var(--p-primary);
   color: white !important;
 }
 
@@ -210,19 +210,19 @@
   border-radius: 6px;
   overflow: hidden;
   margin-bottom: 1rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--p-border);
 }
 
 .progress-fill {
   height: 100%;
-  background-color: var(--primary);
+  background-color: var(--p-primary);
   transition: width 0.1s ease;
 }
 
 /* Area Selector */
 .area-selector-grid {
   display: grid;
-  border: 1px solid var(--border);
+  border: 1px solid var(--p-border);
   gap: 0;
   user-select: none;
   background-color: white;
@@ -241,7 +241,7 @@
 }
 
 .area-cell.selected {
-  background-color: var(--primary);
+  background-color: var(--p-primary);
   color: white;
 }
 
@@ -270,7 +270,7 @@
 
 .folder-label:hover {
   background-color: #f1f5f9;
-  color: var(--primary);
+  color: var(--p-primary);
 }
 
 /* Transfer List */
@@ -283,7 +283,7 @@
 .list-box {
   width: 220px;
   height: 350px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--p-border);
   border-radius: 16px;
   background-color: white;
   overflow-y: auto;
@@ -316,15 +316,15 @@
   padding: 10px;
   min-width: 50px;
   background-color: white;
-  border: 1px solid var(--border);
+  border: 1px solid var(--p-border);
   color: var(--text-main);
   border-radius: 8px;
   font-weight: 600;
 }
 
 .transfer-btns button:hover:not(:disabled) {
-  border-color: var(--primary);
-  color: var(--primary);
+  border-color: var(--p-primary);
+  color: var(--p-primary);
 }
 
 .transfer-btns button:disabled {
@@ -337,7 +337,7 @@
   width: 320px;
   height: 320px;
   background-color: white;
-  border: 2px solid var(--border);
+  border: 2px solid var(--p-border);
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -351,7 +351,7 @@
   width: 200px;
   height: 200px;
   background-color: #f8fafc;
-  border: 2px solid var(--border);
+  border: 2px solid var(--p-border);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -362,7 +362,7 @@
   width: 100px;
   height: 100px;
   background-color: #f1f5f9;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--p-primary);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -370,7 +370,7 @@
   text-align: center;
   font-weight: 600;
   cursor: pointer;
-  color: var(--primary);
+  color: var(--p-primary);
 }
 
 /* Circle Touch / Whiteboard */
@@ -379,19 +379,19 @@
   max-width: 800px;
   height: 400px;
   background-color: white;
-  border: 2px dashed var(--border);
+  border: 2px dashed var(--p-border);
   border-radius: 16px;
   cursor: crosshair;
 }
 
 .circle {
-  border: 2px solid var(--primary);
+  border: 2px solid var(--p-primary);
   background-color: rgba(79, 70, 229, 0.1);
 }
 
 /* Common Components */
 .btn-primary {
-  background-color: var(--primary);
+  background-color: var(--p-primary);
   color: white;
   font-weight: 600;
   padding: 10px 20px;
@@ -399,13 +399,13 @@
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-hover);
+  background-color: var(--p-primary-hover);
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
 }
 
 .btn-outline {
   background-color: white;
-  border: 1px solid var(--border);
+  border: 1px solid var(--p-border);
   color: var(--text-main);
   font-weight: 600;
   padding: 10px 20px;
@@ -413,6 +413,6 @@
 }
 
 .btn-outline:hover {
-  border-color: var(--primary);
-  color: var(--primary);
+  border-color: var(--p-primary);
+  color: var(--p-primary);
 }

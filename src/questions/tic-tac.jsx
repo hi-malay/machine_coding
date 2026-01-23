@@ -80,7 +80,7 @@ const TicTacToe = () => {
           </h2>
           <button
             onClick={resetGame}
-            style={{ backgroundColor: "var(--primary)" }}
+            style={{ backgroundColor: "var(--p-primary)" }}
           >
             Play Again
           </button>

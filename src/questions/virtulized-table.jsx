@@ -31,7 +31,7 @@ const VirtulizedTable = ({ table = 1000 }) => {
         maxWidth: "500px",
         height: "400px",
         overflowY: "auto",
-        border: "1px solid var(--border)",
+        border: "1px solid var(--p-border)",
         borderRadius: "12px",
         bgcolor: "white",
       }}
@@ -53,7 +53,7 @@ const VirtulizedTable = ({ table = 1000 }) => {
               style={{
                 width: "32px",
                 height: "32px",
-                backgroundColor: "var(--primary)",
+                backgroundColor: "var(--p-primary)",
                 color: "white",
                 borderRadius: "50%",
                 display: "flex",
@@ -81,7 +81,7 @@ const VirtulizedTable = ({ table = 1000 }) => {
             style={{
               padding: "20px",
               textAlign: "center",
-              color: "var(--primary)",
+              color: "var(--p-primary)",
               fontWeight: "600",
               fontSize: "0.9rem",
             }}
