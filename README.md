@@ -1,4 +1,4 @@
-# ⚡ Machine Coding Portal
+# [⚡ Machine Coding Portal](https://code.malaymishra.com/)
 
 A premium, interactive playground for common Frontend Interview Machine Coding challenges. Built with React and designed for performance, modularity, and aesthetics.
 
@@ -48,6 +48,6 @@ A premium, interactive playground for common Frontend Interview Machine Coding c
 - **Framework**: React 19
 - **Styling**: Vanilla CSS (CSS Variables)
 - **Deployment**: Optimized for production build/deploy
-
+- **https://code.malaymishra.com/
 ---
 Built with ❤️ for frontend developers.
