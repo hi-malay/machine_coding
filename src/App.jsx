@@ -16,6 +16,14 @@ import AreaSelector from "./questions/area-selector";
 import NestedComment from "./questions/nested-comment";
 import { Input } from "./components/ui/input";
 import { Button } from "./components/ui/button";
+import { Code, Terminal } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "./components/ui/accordion";
+import { Checkbox } from "./components/ui/checkbox";
 
 const folderStructure = [
   {
@@ -108,8 +116,16 @@ const nestedComment = [
 function App() {
   const [activeChallenge, setActiveChallenge] = useState("folder-structure");
   const [checkbox, setCheckbox] = useState({});
+  const [completedChallenges, setCompletedChallenges] = useState({});
   const [commentData, setCommentData] = useState(nestedComment);
   const [input, setInput] = useState("");
+
+  const toggleChallengeCompletion = (id) => {
+    setCompletedChallenges((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
 
   const handleCommentChange = (e) => {
     setInput(e.target.value);
@@ -120,28 +136,62 @@ function App() {
       id: "folder-structure",
       name: "Folder Structure",
       component: <FolderStructure data={folderStructure} />,
+      fileName: "folder-structure.jsx",
     },
-    { id: "stopwatch", name: "Stopwatch", component: <Stopwatch /> },
-    { id: "rating", name: "Rating", component: <Rating rating={3.5} /> },
+    {
+      id: "stopwatch",
+      name: "Stopwatch",
+      component: <Stopwatch />,
+      fileName: "stopwatch.jsx",
+    },
+    {
+      id: "rating",
+      name: "Rating",
+      component: <Rating rating={3.5} />,
+      fileName: "rating.jsx",
+    },
     {
       id: "multiprogress",
       name: "Multi Progress",
       component: <Multiprogress />,
+      fileName: "multiprogress.jsx",
     },
     {
       id: "bubbling",
       name: "Bubbling & Capturing",
       component: <BublingCapturing />,
+      fileName: "bubbling-capturing.jsx",
     },
-    { id: "grid-game", name: "Grid Game", component: <GridGame list={16} /> },
+    {
+      id: "grid-game",
+      name: "Grid Game",
+      component: <GridGame list={16} />,
+      fileName: "grid-game.jsx",
+    },
     {
       id: "virtulized-table",
       name: "Virtualized Table",
       component: <VirtulizedTable table={16} />,
+      fileName: "virtulized-table.jsx",
     },
-    { id: "circle-touch", name: "Circle Touch", component: <CircleTouch /> },
-    { id: "traffic-light", name: "Traffic Light", component: <TrafficLight /> },
-    { id: "tic-tac-toe", name: "Tic Tac Toe", component: <TicTacToe /> },
+    {
+      id: "circle-touch",
+      name: "Circle Touch",
+      component: <CircleTouch />,
+      fileName: "circle-touch.jsx",
+    },
+    {
+      id: "traffic-light",
+      name: "Traffic Light",
+      component: <TrafficLight />,
+      fileName: "traffic-light.jsx",
+    },
+    {
+      id: "tic-tac-toe",
+      name: "Tic Tac Toe",
+      component: <TicTacToe />,
+      fileName: "tic-tac.jsx",
+    },
     {
       id: "nested-checkbox",
       name: "Nested Checkbox",
@@ -152,16 +202,19 @@ function App() {
           setCheckbox={setCheckbox}
         />
       ),
+      fileName: "nested-checkbox.jsx",
     },
     {
       id: "transfer-list",
       name: "Transfer List",
       component: <TransferList transferData={transferData} />,
+      fileName: "transfer-list.jsx",
     },
     {
       id: "area-selector",
       name: "Area Selector",
       component: <AreaSelector row={10} col={10} />,
+      fileName: "area-selector.jsx",
     },
     {
       id: "nested-comment",
@@ -202,6 +255,7 @@ function App() {
           />
         </>
       ),
+      fileName: "nested-comment.jsx",
     },
   ];
 
@@ -209,25 +263,68 @@ function App() {
   return (
     <div className="app-container">
       <nav className="sidebar">
-        <div className="sidebar-title">
-          <span>⚡</span> Machine Coding
-        </div>
-        <ul className="nav-list">
-          {challenges.map((challenge) => (
-            <li
-              key={challenge.id}
-              className={`nav-item ${activeChallenge === challenge.id ? "active" : ""}`}
-              onClick={() => setActiveChallenge(challenge.id)}
-            >
-              {challenge.name}
-            </li>
-          ))}
-        </ul>
+        <Accordion
+          type="multiple"
+          defaultValue={["machine-coding"]}
+          className="w-full"
+        >
+          <AccordionItem value="machine-coding" className="border-none">
+            <AccordionTrigger className="hover:no-underline py-2">
+              <div className="sidebar-title mb-0">
+                <Terminal size={20} className="text-indigo-600" />
+                <span>Machine Coding</span>
+              </div>
+            </AccordionTrigger>
+            <AccordionContent>
+              <ul className="nav-list mt-2">
+                {challenges.map((challenge) => (
+                  <li
+                    key={challenge.id}
+                    className={`nav-item flex items-center justify-between gap-2 ${
+                      activeChallenge === challenge.id ? "active" : ""
+                    }`}
+                    onClick={() => setActiveChallenge(challenge.id)}
+                  >
+                    <span className="flex-1">{challenge.name}</span>
+                    <div
+                      className="flex items-center"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleChallengeCompletion(challenge.id);
+                      }}
+                    >
+                      <Checkbox
+                        id={`complete-${challenge.id}`}
+                        checked={completedChallenges[challenge.id] || false}
+                        className={`transition-colors ${
+                          activeChallenge === challenge.id
+                            ? "border-white data-[state=checked]:bg-white data-[state=checked]:text-indigo-600"
+                            : "border-slate-300"
+                        }`}
+                      />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </nav>
 
       <main className="main-content">
         <div className="challenge-header">
-          <h1 className="challenge-title">{currentChallenge?.name}</h1>
+          <div className="flex items-center gap-3">
+            <h1 className="challenge-title">{currentChallenge?.name}</h1>
+            <a
+              href={`https://github.com/hi-malay/machine_coding/blob/main/src/questions/${currentChallenge?.fileName}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="code-link"
+              title="View Source on GitHub"
+            >
+              <Code size={40} />
+            </a>
+          </div>
           <p className="challenge-subtitle">
             Frontend Interview Challenge Solution
           </p>
