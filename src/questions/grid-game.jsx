@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const GridGame = ({ list = 16 }) => {
   const [open, setOpen] = useState([]);

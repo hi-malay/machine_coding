@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const TransferList = ({ transferData }) => {
   const [listOne, setListOne] = useState(

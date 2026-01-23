@@ -13,6 +13,7 @@ import TicTacToe from "./questions/tic-tac";
 import NestedCheckBox from "./questions/nested-checkbox";
 import TransferList from "./questions/transfer-list";
 import AreaSelector from "./questions/area-selector";
+import NestedComment from "./questions/nested-comment";
 
 const folderStructure = [
   {
@@ -139,6 +140,11 @@ function App() {
       id: "area-selector",
       name: "Area Selector",
       component: <AreaSelector row={10} col={10} />,
+    },
+    {
+      id: "nested-comment",
+      name: "Nested Comment",
+      component: <NestedComment />,
     },
   ];
 
