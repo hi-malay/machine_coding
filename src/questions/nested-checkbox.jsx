@@ -2,17 +2,22 @@ import React from "react";
 
 const NestedCheckBox = ({ data, checkbox, setCheckbox }) => {
   const toggleCheckbox = (id, children, newValue) => {
-    let updates = { [id]: newValue };
+    setCheckbox((prev) => {
+      const newState = { ...prev, [id]: newValue };
 
-    const recurse = (items) => {
-      items.forEach((item) => {
-        updates[item.id] = newValue;
-        if (item.children) recurse(item.children);
-      });
-    };
+      const updateChildren = (childList) => {
+        if (!childList) return;
+        childList.forEach((child) => {
+          newState[child.id] = newValue;
+          if (child.children) {
+            updateChildren(child.children);
+          }
+        });
+      };
 
-    if (children) recurse(children);
-    setCheckbox((prev) => ({ ...prev, ...updates }));
+      updateChildren(children);
+      return newState;
+    });
   };
 
   return (

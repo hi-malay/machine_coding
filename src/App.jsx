@@ -14,6 +14,8 @@ import NestedCheckBox from "./questions/nested-checkbox";
 import TransferList from "./questions/transfer-list";
 import AreaSelector from "./questions/area-selector";
 import NestedComment from "./questions/nested-comment";
+import { Input } from "./components/ui/input";
+import { Button } from "./components/ui/button";
 
 const folderStructure = [
   {
@@ -89,9 +91,29 @@ const transferData = [
   { label: "Coorg", id: 5 },
 ];
 
+const nestedComment = [
+  {
+    id: 1,
+    text: "This is a comment",
+    replies: [
+      {
+        id: 2,
+        text: "This is a reply",
+        replies: [],
+      },
+    ],
+  },
+];
+
 function App() {
   const [activeChallenge, setActiveChallenge] = useState("folder-structure");
   const [checkbox, setCheckbox] = useState({});
+  const [commentData, setCommentData] = useState(nestedComment);
+  const [input, setInput] = useState("");
+
+  const handleCommentChange = (e) => {
+    setInput(e.target.value);
+  };
 
   const challenges = [
     {
@@ -144,12 +166,46 @@ function App() {
     {
       id: "nested-comment",
       name: "Nested Comment",
-      component: <NestedComment />,
+      component: (
+        <>
+          {" "}
+          <div className="flex gap-5">
+            <Input
+              type="text"
+              className="w-80 mb-5"
+              placeholder="Add a comment"
+              onChange={(e) => handleCommentChange(e)}
+            />
+            <Button
+              type="button"
+              className="w-40 mb-5"
+              onClick={() => {
+                if (input) {
+                  setCommentData((prev) => [
+                    ...prev,
+                    {
+                      id: prev.length + 1 + "_parent",
+                      text: input,
+                      replies: [],
+                    },
+                  ]);
+                }
+              }}
+            >
+              Add Comment
+            </Button>
+          </div>
+          <NestedComment
+            key={0.2 + "_parent"}
+            commentData={commentData}
+            setCommentData={setCommentData}
+          />
+        </>
+      ),
     },
   ];
 
   const currentChallenge = challenges.find((c) => c.id === activeChallenge);
-
   return (
     <div className="app-container">
       <nav className="sidebar">
