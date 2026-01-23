@@ -1,3 +1,4 @@
+import { Checkbox } from "../components/ui/checkbox";
 import React from "react";
 
 const NestedCheckBox = ({ data, checkbox, setCheckbox }) => {
@@ -25,9 +26,7 @@ const NestedCheckBox = ({ data, checkbox, setCheckbox }) => {
       {data.map((item) => (
         <div key={item.id} style={{ margin: "8px 0" }}>
           <div className="folder-label" style={{ padding: "6px 10px" }}>
-            <input
-              type="checkbox"
-              style={{ width: "18px", height: "18px", cursor: "pointer" }}
+            <Checkbox
               checked={!!checkbox[item.id]}
               onChange={(e) =>
                 toggleCheckbox(item.id, item.children, e.target.checked)

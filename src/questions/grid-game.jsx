@@ -1,3 +1,4 @@
+import { Button } from "../components/ui/button";
 import { useRef, useState } from "react";
 
 const GridGame = ({ list = 16 }) => {
@@ -60,9 +61,9 @@ const GridGame = ({ list = 16 }) => {
           <h2 style={{ color: "#ef4444", marginBottom: "10px" }}>
             BOOM! You Lost!
           </h2>
-          <button className="btn-primary" onClick={resetGame}>
+          <Button className="btn-primary" onClick={resetGame}>
             Try Again
-          </button>
+          </Button>
         </div>
       )}
 
@@ -71,9 +72,9 @@ const GridGame = ({ list = 16 }) => {
           <h2 style={{ color: "#22c55e", marginBottom: "10px" }}>
             You Won! 🏆
           </h2>
-          <button className="btn-primary" onClick={resetGame}>
+          <Button className="btn-primary" onClick={resetGame}>
             Play Again
-          </button>
+          </Button>
         </div>
       )}
     </div>

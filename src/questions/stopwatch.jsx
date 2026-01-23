@@ -1,3 +1,4 @@
+import { Button } from "../components/ui/button";
 import React, { useRef, useState } from "react";
 
 const Stopwatch = () => {
@@ -35,15 +36,15 @@ const Stopwatch = () => {
       </div>
 
       <div className="stopwatch-btn-group">
-        <button onClick={start} style={{ backgroundColor: "var(--p-primary)" }}>
+        <Button onClick={start} style={{ backgroundColor: "var(--p-primary)" }}>
           Start
-        </button>
-        <button onClick={stop} style={{ backgroundColor: "#334155" }}>
+        </Button>
+        <Button onClick={stop} style={{ backgroundColor: "#334155" }}>
           Stop
-        </button>
-        <button onClick={reset} style={{ backgroundColor: "#ef4444" }}>
+        </Button>
+        <Button onClick={reset} style={{ backgroundColor: "#ef4444" }}>
           Reset
-        </button>
+        </Button>
       </div>
     </div>
   );

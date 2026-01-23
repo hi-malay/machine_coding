@@ -1,3 +1,4 @@
+import { Button } from "../components/ui/button";
 import { useRef, useState, useEffect } from "react";
 
 const Multiprogress = () => {
@@ -42,7 +43,7 @@ const Multiprogress = () => {
         gap: "1.5rem",
       }}
     >
-      <button
+      <Button
         onClick={addProgress}
         style={{
           backgroundColor: "var(--p-primary)",
@@ -52,7 +53,7 @@ const Multiprogress = () => {
         }}
       >
         + Add New Progress Bar
-      </button>
+      </Button>
 
       <div
         style={{
