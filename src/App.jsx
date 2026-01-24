@@ -29,39 +29,44 @@ const folderStructure = [
   {
     name: "Personal",
     type: "folder",
+    id: 1,
     children: [
       {
         name: "Documents",
         type: "folder",
+        id: 2,
         children: [
-          { name: "Resume.docx", type: "file" },
-          { name: "CoverLetter.docx", type: "file" },
+          { name: "Resume.docx", type: "file", id: 3 },
+          { name: "CoverLetter.docx", type: "file", id: 4 },
         ],
       },
       {
         name: "Photos",
         type: "folder",
+        id: 5,
         children: [
           {
             name: "Vacation",
             type: "folder",
+            id: 6,
             children: [
-              { name: "beach.png", type: "file" },
-              { name: "mountains.png", type: "file" },
+              { name: "beach.png", type: "file", id: 7 },
+              { name: "mountains.png", type: "file", id: 8 },
             ],
           },
-          { name: "Family.png", type: "file" },
+          { name: "Family.png", type: "file", id: 9 },
         ],
       },
-      { name: "todo.txt", type: "file" },
+      { name: "todo.txt", type: "file", id: 10 },
     ],
   },
   {
     name: "Private",
     type: "folder",
+    id: 11,
     children: [
-      { name: "Resume.docx", type: "file" },
-      { name: "CoverLetter.docx", type: "file" },
+      { name: "Resume.docx", type: "file", id: 12 },
+      { name: "CoverLetter.docx", type: "file", id: 13 },
     ],
   },
 ];
@@ -119,6 +124,7 @@ function App() {
   const [completedChallenges, setCompletedChallenges] = useState({});
   const [commentData, setCommentData] = useState(nestedComment);
   const [input, setInput] = useState("");
+  const [folderData, setFolderData] = useState(folderStructure);
 
   const toggleChallengeCompletion = (id) => {
     setCompletedChallenges((prev) => ({
@@ -135,7 +141,12 @@ function App() {
     {
       id: "folder-structure",
       name: "Folder Structure",
-      component: <FolderStructure data={folderStructure} />,
+      component: (
+        <FolderStructure
+          folderData={folderData}
+          setFolderData={setFolderData}
+        />
+      ),
       fileName: "folder-structure.jsx",
     },
     {
@@ -286,16 +297,13 @@ function App() {
                     onClick={() => setActiveChallenge(challenge.id)}
                   >
                     <span className="flex-1">{challenge.name}</span>
-                    <div
-                      className="flex items-center"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        toggleChallengeCompletion(challenge.id);
-                      }}
-                    >
+                    <div className="flex items-center">
                       <Checkbox
                         id={`complete-${challenge.id}`}
                         checked={completedChallenges[challenge.id] || false}
+                        onCheckedChange={(value) =>
+                          toggleChallengeCompletion(value)
+                        }
                         className={`transition-colors ${
                           activeChallenge === challenge.id
                             ? "border-white data-[state=checked]:bg-white data-[state=checked]:text-indigo-600"

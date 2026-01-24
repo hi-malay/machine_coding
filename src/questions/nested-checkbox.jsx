@@ -28,8 +28,8 @@ const NestedCheckBox = ({ data, checkbox, setCheckbox }) => {
           <div className="folder-label" style={{ padding: "6px 10px" }}>
             <Checkbox
               checked={!!checkbox[item.id]}
-              onChange={(e) =>
-                toggleCheckbox(item.id, item.children, e.target.checked)
+              onCheckedChange={(value) =>
+                toggleCheckbox(item.id, item.children, value)
               }
             />
             <span style={{ fontSize: "1rem", fontWeight: "500" }}>
