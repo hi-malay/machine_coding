@@ -24,6 +24,7 @@ import {
   AccordionTrigger,
 } from "./components/ui/accordion";
 import { Checkbox } from "./components/ui/checkbox";
+import StrechDiv from "./questions/strech-dev";
 
 const folderStructure = [
   {
@@ -267,6 +268,12 @@ function App() {
         </>
       ),
       fileName: "nested-comment.jsx",
+    },
+    {
+      id: "strech-div",
+      name: "Strech Div",
+      component: <StrechDiv />,
+      fileName: "strech-div.jsx",
     },
   ];
 
