@@ -11,7 +11,7 @@ const StrechDiv = () => {
 
       const { clientX, clientY } = e;
       const { left, top } = divRef.current.getBoundingClientRect();
-
+      console.log(clientX, clientY, left, top);
       const newWidth = Math.max(clientX - left);
       const newHeight = Math.max(clientY - top);
 
@@ -32,7 +32,7 @@ const StrechDiv = () => {
       window.removeEventListener("mouseup", handleMouseUp);
     };
   }, [active]);
-  console.log(size);
+
   return (
     <div
       ref={divRef}

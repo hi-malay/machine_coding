@@ -28,25 +28,37 @@ const Stopwatch = () => {
   const secondsLocal = seconds % 60;
 
   return (
-    <div className="stopwatch-container">
-      <div className="stopwatch-display">
+    <section className="stopwatch-container" aria-labelledby="stopwatch-title">
+      <div className="stopwatch-display" role="timer" aria-live="polite">
         <span>{hours.toString().padStart(2, "0")}</span>:
         <span>{minutes.toString().padStart(2, "0")}</span>:
         <span>{secondsLocal.toString().padStart(2, "0")}</span>
       </div>
 
       <div className="stopwatch-btn-group">
-        <Button onClick={start} style={{ backgroundColor: "var(--p-primary)" }}>
+        <Button
+          onClick={start}
+          style={{ backgroundColor: "var(--p-primary)" }}
+          aria-label="Start stopwatch"
+        >
           Start
         </Button>
-        <Button onClick={stop} style={{ backgroundColor: "#334155" }}>
+        <Button
+          onClick={stop}
+          style={{ backgroundColor: "#334155" }}
+          aria-label="Stop stopwatch"
+        >
           Stop
         </Button>
-        <Button onClick={reset} style={{ backgroundColor: "#ef4444" }}>
+        <Button
+          onClick={reset}
+          style={{ backgroundColor: "#ef4444" }}
+          aria-label="Reset stopwatch"
+        >
           Reset
         </Button>
       </div>
-    </div>
+    </section>
   );
 };
 
