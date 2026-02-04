@@ -24,7 +24,7 @@ import {
   AccordionTrigger,
 } from "./components/ui/accordion";
 import { Checkbox } from "./components/ui/checkbox";
-import StrechDiv from "./questions/strech-dev";
+import StrechDiv from "./questions/strech-div";
 
 const folderStructure = [
   {
