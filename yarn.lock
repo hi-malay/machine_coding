@@ -9118,15 +9118,10 @@ thenify-all@^1.0.0:
   dependencies:
     any-promise "^1.0.0"
 
-thikana@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/thikana/-/thikana-1.0.0.tgz#283d766c0ccdfe72dc5b2ef27c0119f7580864a3"
-  integrity sha512-xjFrouIjnTeR6f9391aSwxsZkYnvkmKkAJL4iMy9AJBopMvgZ8N4BtghMrplf5vU8yl8HlTxlpCycbHmTKIv9g==
-
-thikanaa@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.npmjs.org/thikanaa/-/thikanaa-0.1.3.tgz"
-  integrity sha512-24hvl74ZxA5QILBEtknrfHtijXROwv2O6fJCLBWY5TKHio7T6xyc5WSDWfYrgw97tdFISTzPOe3VbDkMomR2LA==
+thikanaa@0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/thikanaa/-/thikanaa-0.1.6.tgz#e21679954586d7ec8e5e4430ec0ece56d1f0888e"
+  integrity sha512-qnOcls983b7fwdv6AXcGk8fU8CntocdiGKSJ9jFAUeYu3yXOsBCJgzndPiqgudYcYY9sa3P6HUu3DpePdnW94w==
   dependencies:
     "@ai-sdk/google" "^3.0.15"
     "@ai-sdk/groq" "^3.0.16"

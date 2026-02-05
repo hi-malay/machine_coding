@@ -362,7 +362,7 @@ function App() {
         <ChatPopup
           assistantName="Interview Helper"
           initialMessage="Hi! I'm here to help you with interview questions. Feel free to ask me anything!"
-          mockMode={true}
+          mockMode={false}
           position="relative"
         />
       </div>
