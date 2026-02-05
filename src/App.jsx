@@ -1,4 +1,5 @@
 import "./App.css";
+import "thikanaa/dist/index.css";
 import { useState } from "react";
 import FolderStructure from "./questions/folder-structure";
 import Stopwatch from "./questions/stopwatch";
@@ -25,6 +26,7 @@ import {
 } from "./components/ui/accordion";
 import { Checkbox } from "./components/ui/checkbox";
 import StrechDiv from "./questions/strech-div";
+import { ChatPopup } from "thikanaa";
 
 const folderStructure = [
   {
@@ -347,6 +349,23 @@ function App() {
 
         <div className="challenge-card">{currentChallenge?.component}</div>
       </main>
+
+      {/* Floating Chat Popup */}
+      <div
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          zIndex: 1000,
+        }}
+      >
+        <ChatPopup
+          assistantName="Interview Helper"
+          initialMessage="Hi! I'm here to help you with interview questions. Feel free to ask me anything!"
+          mockMode={true}
+          position="relative"
+        />
+      </div>
     </div>
   );
 }
