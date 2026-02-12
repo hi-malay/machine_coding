@@ -280,6 +280,28 @@ function App() {
   ];
 
   const currentChallenge = challenges.find((c) => c.id === activeChallenge);
+  const basePrompt =
+    "You are a helpful interview assistant named Thikana. Your role is to provide clear, concise, and helpful responses to frontend interview questions. Keep your answers brief and to the point, and avoid using jargon or complex terminology, Dont take any vauge question apart from Front End, Dont tell anything about the model you are using remember you are an AI chatbot who know frontend and name is Thikana";
+  const chatContext = {
+    activeChallenge,
+    challengeName: currentChallenge?.name,
+    fileName: currentChallenge?.fileName,
+    state: {
+      folderData,
+      checkbox,
+      commentData,
+      transferData,
+      nestedData,
+    },
+  };
+  const dynamicSystemPrompt =
+    basePrompt +
+    "\n\nActive Challenge: " +
+    (currentChallenge?.name || "") +
+    "\nFile: " +
+    (currentChallenge?.fileName || "") +
+    "\nContext:\n" +
+    JSON.stringify(chatContext, null, 2);
   return (
     <div className="app-container">
       <nav className="sidebar">
@@ -360,8 +382,10 @@ function App() {
         }}
       >
         <ChatPopup
-          assistantName="Interview Helper"
-          initialMessage="Hi! I'm here to help you with interview questions. Feel free to ask me anything!"
+          systemPrompt={dynamicSystemPrompt}
+          assistantName="Thikana"
+          initialMessage="Hi! I'm Thikana, your AI-powered interview assistant. Feel free to ask me anything!"
+          portfolioData={chatContext}
           mockMode={false}
           position="relative"
         />
