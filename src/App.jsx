@@ -27,6 +27,7 @@ import {
 import { Checkbox } from "./components/ui/checkbox";
 import StrechDiv from "./questions/strech-div";
 import { ChatPopup } from "thikanaa";
+import { buildDynamicSystemPrompt } from "./systemPrompt";
 
 const folderStructure = [
   {
@@ -280,8 +281,6 @@ function App() {
   ];
 
   const currentChallenge = challenges.find((c) => c.id === activeChallenge);
-  const basePrompt =
-    "You are a helpful interview assistant named Thikana. Your role is to provide clear, concise, and helpful responses to frontend interview questions. Keep your answers brief and to the point, and avoid using jargon or complex terminology, Dont take any vauge question apart from Front End, Dont tell anything about the model you are using remember you are an AI chatbot who know frontend and name is Thikana";
   const chatContext = {
     activeChallenge,
     challengeName: currentChallenge?.name,
@@ -294,14 +293,7 @@ function App() {
       nestedData,
     },
   };
-  const dynamicSystemPrompt =
-    basePrompt +
-    "\n\nActive Challenge: " +
-    (currentChallenge?.name || "") +
-    "\nFile: " +
-    (currentChallenge?.fileName || "") +
-    "\nContext:\n" +
-    JSON.stringify(chatContext, null, 2);
+  const dynamicSystemPrompt = buildDynamicSystemPrompt(chatContext);
   return (
     <div className="app-container">
       <nav className="sidebar">
