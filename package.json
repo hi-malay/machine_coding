@@ -20,10 +20,12 @@
     "react-scripts": "5.0.1",
     "tailwind-merge": "^3.4.0",
     "tailwindcss-animate": "^1.0.7",
-    "thikanaa": "^0.1.17",
+    "thikanaa": "latest",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "prestart": "yarn upgrade thikanaa --latest",
+    "prebuild": "yarn upgrade thikanaa --latest",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
