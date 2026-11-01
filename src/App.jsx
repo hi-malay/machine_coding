@@ -28,6 +28,7 @@ import { Checkbox } from "./components/ui/checkbox";
 import StrechDiv from "./questions/strech-div";
 import { ChatPopup } from "thikanaa";
 import { buildDynamicSystemPrompt } from "./systemPrompt";
+import ToastDiv from "./questions/toats-div";
 
 const folderStructure = [
   {
@@ -186,7 +187,7 @@ function App() {
     {
       id: "virtulized-table",
       name: "Virtualized Table",
-      component: <VirtulizedTable table={16} />,
+      component: <VirtulizedTable />,
       fileName: "virtulized-table.jsx",
     },
     {
@@ -277,6 +278,12 @@ function App() {
       name: "Strech Div",
       component: <StrechDiv />,
       fileName: "strech-div.jsx",
+    },
+    {
+      id: "toast-div",
+      name: "Toast Div",
+      component: <ToastDiv />,
+      fileName: "toast-div.jsx",
     },
   ];
 

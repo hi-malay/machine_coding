@@ -32,14 +32,6 @@
     "@ai-sdk/provider" "3.0.7"
     "@ai-sdk/provider-utils" "4.0.13"
 
-"@ai-sdk/openai@^3.0.21":
-  version "3.0.25"
-  resolved "https://registry.npmjs.org/@ai-sdk/openai/-/openai-3.0.25.tgz"
-  integrity sha512-DsaN46R98+D1W3lU3fKuPU3ofacboLaHlkAwxJPgJ8eup1AJHmPK1N1y10eJJbJcF6iby8Tf/vanoZxc9JPUfw==
-  dependencies:
-    "@ai-sdk/provider" "3.0.7"
-    "@ai-sdk/provider-utils" "4.0.13"
-
 "@ai-sdk/provider-utils@4.0.13":
   version "4.0.13"
   resolved "https://registry.npmjs.org/@ai-sdk/provider-utils/-/provider-utils-4.0.13.tgz"
@@ -5245,7 +5237,7 @@ html-encoding-sniffer@^2.0.1:
   dependencies:
     whatwg-encoding "^1.0.5"
 
-html-entities@^2.1.0, html-entities@^2.3.2:
+html-entities@^2.1.0, html-entities@^2.3.2, html-entities@^2.6.0:
   version "2.6.0"
   resolved "https://registry.npmjs.org/html-entities/-/html-entities-2.6.0.tgz"
   integrity sha512-kig+rMn/QOVRvr7c86gQ8lWXq+Hkv6CbAH1hLu+RG338StTpE8Z0b44SDVaqVu7HGKf27frdmUYEs9hTUX/cLQ==
@@ -6638,6 +6630,19 @@ makeerror@1.0.12:
   integrity sha512-JmqCvUhmt43madlpFzG4BQzG2Z3m6tvQDNKdClZnO3VbIudJYmxsT0FNJMeiB2+JTSlTQTSbU8QdesVmwJcmLg==
   dependencies:
     tmpl "1.0.5"
+
+marked-react@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/marked-react/-/marked-react-4.0.0.tgz#44b1a2f886f824de371a45d969312bd9d512fc58"
+  integrity sha512-+Kp1FSK0gT6q6uKjXvwaIigj++BkyKFxiQlrhDTu10H/awBvs1K4K1Uenu/6N7Ci4u0FxYtFuZxtgAZkW6w8gg==
+  dependencies:
+    html-entities "^2.6.0"
+    marked "^17.0.4"
+
+marked@^17.0.4:
+  version "17.0.6"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-17.0.6.tgz#2a97586a272d3be5880f198e020b74ad27cf86ba"
+  integrity sha512-gB0gkNafnonOw0obSTEGZTT86IuhILt2Wfx0mWH/1Au83kybTayroZ/V6nS25mN7u8ASy+5fMhgB3XPNrOZdmA==
 
 math-intrinsics@^1.1.0:
   version "1.1.0"
@@ -9118,15 +9123,15 @@ thenify-all@^1.0.0:
   dependencies:
     any-promise "^1.0.0"
 
-thikanaa@^0.1.11:
-  version "0.1.11"
-  resolved "https://registry.yarnpkg.com/thikanaa/-/thikanaa-0.1.11.tgz#3b87d59debbba80ff1632c0dc9dcb6c50fa92dbf"
-  integrity sha512-jEuvJlEvGggaf9ngtfXAXW7zhBEiPhxC9flqTfQ1Y4MV3svEXyZM9ObuUETaxvYmssBFZhKTEQQbT70VeP0qtw==
+thikanaa@latest:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/thikanaa/-/thikanaa-0.2.0.tgz#267de546295c63af9b0cde756db35fa90c0f31a6"
+  integrity sha512-nCn46YovwclHW8eA8+ylcmyMf9BCVIBRyKCE967LVbaHAGQ5yU//xkKUYrag/YlwjW28QIwlYidKA86KMZZwJQ==
   dependencies:
     "@ai-sdk/google" "^3.0.15"
     "@ai-sdk/groq" "^3.0.16"
-    "@ai-sdk/openai" "^3.0.21"
     ai "^6.0.57"
+    marked-react "^4.0.0"
     zod "^4.3.6"
 
 throat@^6.0.1:
