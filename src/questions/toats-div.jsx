@@ -1,5 +1,5 @@
 import { Button } from "../components/ui/button";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 
 const ToastDiv = () => {
   const [showToast, setShowToast] = useState([

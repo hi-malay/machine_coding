@@ -1,9 +1,4 @@
-import { Button } from "../components/ui/button";
-import { useState } from "react";
-
 const DragDropKanban = () => {
-  const [open, setOpen] = useState([]);
-
   const handleDragStart = (e) => {
     e.dataTransfer.setData("id", e.target.id);
     console.log("id", e.target.id);
