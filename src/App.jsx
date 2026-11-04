@@ -29,6 +29,7 @@ import StrechDiv from "./questions/strech-div";
 import { ChatPopup } from "thikanaa";
 import { buildDynamicSystemPrompt } from "./systemPrompt";
 import ToastDiv from "./questions/toats-div";
+import DragDropKanban from "./questions/drag-drop-kanban";
 
 const folderStructure = [
   {
@@ -284,6 +285,12 @@ function App() {
       name: "Toast Div",
       component: <ToastDiv />,
       fileName: "toast-div.jsx",
+    },
+    {
+      id: "grid-gadiv",
+      name: "Drag Drop Kanban",
+      component: <DragDropKanban />,
+      fileName: "drag-drop-kanban.jsx",
     },
   ];
 
